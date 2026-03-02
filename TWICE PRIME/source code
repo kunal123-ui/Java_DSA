@@ -1,0 +1,38 @@
+import java.util.*;
+public class Main
+{
+    static boolean isprime(int n)
+    {
+        int c=0;
+        for(int i=2;i<=Math.sqrt(n);i++)
+        {
+            if(n%i==0)
+            {
+                c++;
+                break;
+            }
+        }
+        return c==0;
+    }
+    static int rev(int a)
+    {
+        int r=0;
+        while(a>0)
+        {
+            r=r*10+(a%10);
+            a/=10;
+        }
+        return r;
+    }
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int a=s.nextInt();
+		if(isprime(a))
+		{
+		    int r=rev(a);
+		   System.out.println(isprime(r)?"TW prime":"Not TW prime");
+		}
+		else
+		System.out.println("Not TW prime");
+	}
+}
